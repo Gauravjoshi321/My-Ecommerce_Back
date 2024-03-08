@@ -9,15 +9,17 @@ const cors = require('cors')
 const server = express();
 
 //middlewares
-
-server.use(cors({
-  exposedHeaders: ['X-Total-Count']
-}))
+server.use(cors({ exposedHeaders: ['X-Total-Count'] })) // To access the data from Back(one domain) and by front(other domain)
 server.use(express.json()); // to parse req.body
+
+
+// Routing Division
 server.use('/products', productsRouter.router);
 server.use('/categories', categoriesRouter.router)
 server.use('/brands', brandsRouter.router)
 
+
+// Connection to the local DataBase
 main().catch(err => console.log(err));
 
 async function main() {
@@ -25,7 +27,7 @@ async function main() {
   console.log("Database connected");
 }
 
-
+// NodeJS Server.
 server.get('/', (req, res) => {
   res.json({ "status": "success 💗💗" })
 })
