@@ -1,7 +1,9 @@
 const fs = require('fs');
 // const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const Rashi = require('./../rashiModel');
+// const Rashi = require('./../rashiModel');
+const Product = require('./model/Product');
+console.log(Product)
 
 // dotenv.config({ path: './config.env' });
 
@@ -25,13 +27,12 @@ async function main() {
 }
 
 // READ FILE
-const rashi = JSON.parse(fs.readFileSync(`${__dirname}/rashi.json`));
-
+const products = JSON.parse(fs.readFileSync(`${__dirname}/products.json`));
 
 // IMPORT DATA TO THE DATABASE
 const importData = async () => {
   try {
-    await Rashi.create(rashi);
+    await Product.create(products);
     console.log("Data imported successfully");
   }
   catch (err) {
@@ -43,7 +44,7 @@ const importData = async () => {
 // DELETE DATA FROM THE DATABASE
 const deleteTours = async () => {
   try {
-    await Rashi.deleteMany();
+    await Product.deleteMany();
     console.log("Data deleted successfully");
   }
   catch (err) {
