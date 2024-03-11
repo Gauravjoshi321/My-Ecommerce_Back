@@ -1,0 +1,470 @@
+[
+  {
+    "value": "Apple",
+    "label": "Apple",
+    "checked": false,
+    "id": "230c"
+  },
+  {
+    "value": "Samsung",
+    "label": "Samsung",
+    "checked": false,
+    "id": "836c"
+  },
+  {
+    "value": "OPPO",
+    "label": "OPPO",
+    "checked": false,
+    "id": "d72b"
+  },
+  {
+    "value": "Huawei",
+    "label": "Huawei",
+    "checked": false,
+    "id": "d61d"
+  },
+  {
+    "value": "Microsoft Surface",
+    "label": "Microsoft Surface",
+    "checked": false,
+    "id": "b27e"
+  },
+  {
+    "value": "Infinix",
+    "label": "Infinix",
+    "checked": false,
+    "id": "a025"
+  },
+  {
+    "value": "HP Pavilion",
+    "label": "HP Pavilion",
+    "checked": false,
+    "id": "16ca"
+  },
+  {
+    "value": "Impression of Acqua Di Gio",
+    "label": "Impression of Acqua Di Gio",
+    "checked": false,
+    "id": "c6d8"
+  },
+  {
+    "value": "Royal_Mirage",
+    "label": "Royal_Mirage",
+    "checked": false,
+    "id": "c853"
+  },
+  {
+    "value": "Fog Scent Xpressio",
+    "label": "Fog Scent Xpressio",
+    "checked": false,
+    "id": "c587"
+  },
+  {
+    "value": "Al Munakh",
+    "label": "Al Munakh",
+    "checked": false,
+    "id": "166a"
+  },
+  {
+    "value": "Lord - Al-Rehab",
+    "label": "Lord   Al Rehab",
+    "checked": false,
+    "id": "05d3"
+  },
+  {
+    "value": "L'Oreal Paris",
+    "label": "L'Oreal Paris",
+    "checked": false,
+    "id": "f5c8"
+  },
+  {
+    "value": "Hemani Tea",
+    "label": "Hemani Tea",
+    "checked": false,
+    "id": "7a29"
+  },
+  {
+    "value": "Dermive",
+    "label": "Dermive",
+    "checked": false,
+    "id": "1434"
+  },
+  {
+    "value": "ROREC White Rice",
+    "label": "ROREC White Rice",
+    "checked": false,
+    "id": "4460"
+  },
+  {
+    "value": "Fair & Clear",
+    "label": "Fair & Clear",
+    "checked": false,
+    "id": "4486"
+  },
+  {
+    "value": "Saaf & Khaas",
+    "label": "Saaf & Khaas",
+    "checked": false,
+    "id": "aad9"
+  },
+  {
+    "value": "Bake Parlor Big",
+    "label": "Bake Parlor Big",
+    "checked": false,
+    "id": "02ea"
+  },
+  {
+    "value": "Baking Food Items",
+    "label": "Baking Food Items",
+    "checked": false,
+    "id": "4f0b"
+  },
+  {
+    "value": "fauji",
+    "label": "fauji",
+    "checked": false,
+    "id": "c51d"
+  },
+  {
+    "value": "Dry Rose",
+    "label": "Dry Rose",
+    "checked": false,
+    "id": "502e"
+  },
+  {
+    "value": "Boho Decor",
+    "label": "Boho Decor",
+    "checked": false,
+    "id": "4c5c"
+  },
+  {
+    "value": "Flying Wooden",
+    "label": "Flying Wooden",
+    "checked": false,
+    "id": "fdf3"
+  },
+  {
+    "value": "LED Lights",
+    "label": "LED Lights",
+    "checked": false,
+    "id": "d69f"
+  },
+  {
+    "value": "luxury palace",
+    "label": "luxury palace",
+    "checked": false,
+    "id": "0b00"
+  },
+  {
+    "value": "Golden",
+    "label": "Golden",
+    "checked": false,
+    "id": "d59f"
+  },
+  {
+    "value": "Furniture Bed Set",
+    "label": "Furniture Bed Set",
+    "checked": false,
+    "id": "c0bf"
+  },
+  {
+    "value": "Ratttan Outdoor",
+    "label": "Ratttan Outdoor",
+    "checked": false,
+    "id": "806d"
+  },
+  {
+    "value": "Kitchen Shelf",
+    "label": "Kitchen Shelf",
+    "checked": false,
+    "id": "363c"
+  },
+  {
+    "value": "Multi Purpose",
+    "label": "Multi Purpose",
+    "checked": false,
+    "id": "9c88"
+  },
+  {
+    "value": "AmnaMart",
+    "label": "AmnaMart",
+    "checked": false,
+    "id": "bbfb"
+  },
+  {
+    "value": "Professional Wear",
+    "label": "Professional Wear",
+    "checked": false,
+    "id": "4c03"
+  },
+  {
+    "value": "Soft Cotton",
+    "label": "Soft Cotton",
+    "checked": false,
+    "id": "175a"
+  },
+  {
+    "value": "Top Sweater",
+    "label": "Top Sweater",
+    "checked": false,
+    "id": "2ca3"
+  },
+  {
+    "value": "RED MICKY MOUSE..",
+    "label": "RED MICKY MOUSE..",
+    "checked": false,
+    "id": "0aec"
+  },
+  {
+    "value": "Digital Printed",
+    "label": "Digital Printed",
+    "checked": false,
+    "id": "8cc9"
+  },
+  {
+    "value": "Ghazi Fabric",
+    "label": "Ghazi Fabric",
+    "checked": false,
+    "id": "65dc"
+  },
+  {
+    "value": "IELGY",
+    "label": "IELGY",
+    "checked": false,
+    "id": "f794"
+  },
+  {
+    "value": "IELGY fashion",
+    "label": "IELGY fashion",
+    "checked": false,
+    "id": "c2a4"
+  },
+  {
+    "value": "Synthetic Leather",
+    "label": "Synthetic Leather",
+    "checked": false,
+    "id": "3f40"
+  },
+  {
+    "value": "Sandals Flip Flops",
+    "label": "Sandals Flip Flops",
+    "checked": false,
+    "id": "334f"
+  },
+  {
+    "value": "Maasai Sandals",
+    "label": "Maasai Sandals",
+    "checked": false,
+    "id": "7a83"
+  },
+  {
+    "value": "Arrivals Genuine",
+    "label": "Arrivals Genuine",
+    "checked": false,
+    "id": "506c"
+  },
+  {
+    "value": "Vintage Apparel",
+    "label": "Vintage Apparel",
+    "checked": false,
+    "id": "b5d3"
+  },
+  {
+    "value": "FREE FIRE",
+    "label": "FREE FIRE",
+    "checked": false,
+    "id": "b631"
+  },
+  {
+    "value": "The Warehouse",
+    "label": "The Warehouse",
+    "checked": false,
+    "id": "5af9"
+  },
+  {
+    "value": "Sneakers",
+    "label": "Sneakers",
+    "checked": false,
+    "id": "5ead"
+  },
+  {
+    "value": "Rubber",
+    "label": "Rubber",
+    "checked": false,
+    "id": "92f0"
+  },
+  {
+    "value": "Naviforce",
+    "label": "Naviforce",
+    "checked": false,
+    "id": "0c6e"
+  },
+  {
+    "value": "SKMEI 9117",
+    "label": "SKMEI 9117",
+    "checked": false,
+    "id": "8b1d"
+  },
+  {
+    "value": "Strap Skeleton",
+    "label": "Strap Skeleton",
+    "checked": false,
+    "id": "fe41"
+  },
+  {
+    "value": "Stainless",
+    "label": "Stainless",
+    "checked": false,
+    "id": "5d05"
+  },
+  {
+    "value": "Eastern Watches",
+    "label": "Eastern Watches",
+    "checked": false,
+    "id": "9d29"
+  },
+  {
+    "value": "Luxury Digital",
+    "label": "Luxury Digital",
+    "checked": false,
+    "id": "fb08"
+  },
+  {
+    "value": "Watch Pearls",
+    "label": "Watch Pearls",
+    "checked": false,
+    "id": "343e"
+  },
+  {
+    "value": "Bracelet",
+    "label": "Bracelet",
+    "checked": false,
+    "id": "c4ff"
+  },
+  {
+    "value": "LouisWill",
+    "label": "LouisWill",
+    "checked": false,
+    "id": "89ce"
+  },
+  {
+    "value": "Copenhagen Luxe",
+    "label": "Copenhagen Luxe",
+    "checked": false,
+    "id": "ec6c"
+  },
+  {
+    "value": "Steal Frame",
+    "label": "Steal Frame",
+    "checked": false,
+    "id": "c9b8"
+  },
+  {
+    "value": "Darojay",
+    "label": "Darojay",
+    "checked": false,
+    "id": "779d"
+  },
+  {
+    "value": "Fashion Jewellery",
+    "label": "Fashion Jewellery",
+    "checked": false,
+    "id": "6d2a"
+  },
+  {
+    "value": "Cuff Butterfly",
+    "label": "Cuff Butterfly",
+    "checked": false,
+    "id": "d46e"
+  },
+  {
+    "value": "Designer Sun Glasses",
+    "label": "Designer Sun Glasses",
+    "checked": false,
+    "id": "25f6"
+  },
+  {
+    "value": "mastar watch",
+    "label": "mastar watch",
+    "checked": false,
+    "id": "51d7"
+  },
+  {
+    "value": "Car Aux",
+    "label": "Car Aux",
+    "checked": false,
+    "id": "31eb"
+  },
+  {
+    "value": "W1209 DC12V",
+    "label": "W1209 DC12V",
+    "checked": false,
+    "id": "56b7"
+  },
+  {
+    "value": "TC Reusable",
+    "label": "TC Reusable",
+    "checked": false,
+    "id": "e649"
+  },
+  {
+    "value": "Neon LED Light",
+    "label": "Neon LED Light",
+    "checked": false,
+    "id": "80dc"
+  },
+  {
+    "value": "METRO 70cc Motorcycle - MR70",
+    "label": "METRO 70cc Motorcycle   MR70",
+    "checked": false,
+    "id": "98ac"
+  },
+  {
+    "value": "BRAVE BULL",
+    "label": "BRAVE BULL",
+    "checked": false,
+    "id": "f1d8"
+  },
+  {
+    "value": "shock absorber",
+    "label": "shock absorber",
+    "checked": false,
+    "id": "c211"
+  },
+  {
+    "value": "JIEPOLLY",
+    "label": "JIEPOLLY",
+    "checked": false,
+    "id": "2def"
+  },
+  {
+    "value": "Xiangle",
+    "label": "Xiangle",
+    "checked": false,
+    "id": "b01e"
+  },
+  {
+    "value": "lightingbrilliance",
+    "label": "lightingbrilliance",
+    "checked": false,
+    "id": "d9eb"
+  },
+  {
+    "value": "Ifei Home",
+    "label": "Ifei Home",
+    "checked": false,
+    "id": "6094"
+  },
+  {
+    "value": "DADAWU",
+    "label": "DADAWU",
+    "checked": false,
+    "id": "2894"
+  },
+  {
+    "value": "YIOSI",
+    "label": "YIOSI",
+    "checked": false,
+    "id": "05eb"
+  }
+]
