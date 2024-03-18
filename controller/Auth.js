@@ -30,7 +30,10 @@ exports.createUser = async (req, res) => {
                 httpOnly: true,
               })
               .status(201)
-              .json(token);
+              .json({
+                "user": doc,
+                token
+              });
           }
         });
       }
@@ -47,7 +50,10 @@ exports.loginUser = async (req, res) => {
       httpOnly: true,
     })
     .status(201)
-    .json(req.user.token);
+    .json({
+      "token": req.user.token,
+      "user": req.user
+    });
 };
 
 exports.checkUser = async (req, res) => {
