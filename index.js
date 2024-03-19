@@ -10,6 +10,7 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
+const cookieParser = require('cookie-parser');
 
 const { createProduct } = require('./controller/Product');
 const productsRouter = require('./routes/Products');
@@ -21,12 +22,12 @@ const cartRouter = require('./routes/Cart');
 const ordersRouter = require('./routes/Order');
 
 const { User } = require('./model/User');
-const { isAuth, sanitizeUser } = require('./services/common');
+const { isAuth, sanitizeUser, cookieExtractor } = require('./services/common');
 
 const SECRET_KEY = 'SECRET_KEY';
 // JWT options
 const opts = {};
-opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.jwtFromRequest = cookieExtractor;
 opts.secretOrKey = SECRET_KEY; // TODO: should not be in code;
 
 //middlewares
@@ -59,32 +60,34 @@ server.use('/orders', isAuth(), ordersRouter.router);
 // 1. Local Strategy
 passport.use(
   'local',
-  new LocalStrategy(async function (username, password, done) {
-    // by default passport uses username
-    try {
-      const user = await User.findOne({ email: username });
-      // console.log(username, password, user);
-      if (!user) {
-        return done(null, false, { message: 'invalid credentials' }); // for safety
-      }
-      crypto.pbkdf2(
-        password,
-        user.salt,
-        310000,
-        32,
-        'sha256',
-        async function (err, hashedPassword) {
-          if (!crypto.timingSafeEqual(user.password, hashedPassword)) {
-            return done(null, false, { message: 'invalid credentials' });
-          }
-          const token = jwt.sign(sanitizeUser(user), SECRET_KEY);
-          done(null, token); // this lines sends to serializer
+  new LocalStrategy(
+    { usernameField: 'email' },
+    async function (email, password, done) {
+      // by default passport uses username
+      try {
+        const user = await User.findOne({ email });
+        // console.log(email, password, user);
+        if (!user) {
+          return done(null, false, { message: 'invalid credentials' }); // for safety
         }
-      );
-    } catch (err) {
-      done(err);
-    }
-  })
+        crypto.pbkdf2(
+          password,
+          user.salt,
+          310000,
+          32,
+          'sha256',
+          async function (err, hashedPassword) {
+            if (!crypto.timingSafeEqual(user.password, hashedPassword)) {
+              return done(null, false, { message: 'invalid credentials' });
+            }
+            const token = jwt.sign(sanitizeUser(user), SECRET_KEY);
+            done(null, { token }); // this lines sends to serializer
+          }
+        );
+      } catch (err) {
+        done(err);
+      }
+    })
 );
 
 // 2. JWT strategy
@@ -93,7 +96,7 @@ passport.use(
   new JwtStrategy(opts, async function (jwt_payload, done) {
     console.log("jwt index file", { jwt_payload });
     try {
-      const user = await User.findOne({ id: jwt_payload.sub });
+      const user = await User.findById(jwt_payload.id);
       console.log("in jwt", user);
       if (user) {
         return done(null, sanitizeUser(user)); // this calls serializer
