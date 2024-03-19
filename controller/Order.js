@@ -1,9 +1,9 @@
 const { Order } = require("../model/Order");
 
 exports.fetchOrdersByUser = async (req, res) => {
-  const { id } = req.user;
+  const { userId } = req.params;
   try {
-    const orders = await Order.find({ user: id });
+    const orders = await Order.find({ user: userId });
 
     res.status(200).json(orders);
   } catch (err) {

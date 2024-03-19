@@ -18,22 +18,12 @@ exports.createUser = async (req, res) => {
         const user = new User({ ...req.body, password: hashedPassword, salt });
         const doc = await user.save();
 
-        req.login(sanitizeUser(doc), (err) => {
-          // this also calls serializer and adds to session
+        req.login(sanitizeUser(doc), (err) => {  // this also calls serializer and adds to session
           if (err) {
             res.status(400).json(err);
           } else {
             const token = jwt.sign(sanitizeUser(doc), SECRET_KEY);
-            res
-              .cookie('jwt', token, {
-                expires: new Date(Date.now() + 3600000),
-                httpOnly: true,
-              })
-              .status(201)
-              .json({
-                "user": doc,
-                token
-              });
+            res.status(201).json(token);
           }
         });
       }
@@ -44,18 +34,10 @@ exports.createUser = async (req, res) => {
 };
 
 exports.loginUser = async (req, res) => {
-  res
-    .cookie('jwt', req.user.token, {
-      expires: new Date(Date.now() + 3600000),
-      httpOnly: true,
-    })
-    .status(201)
-    .json({
-      "token": req.user.token,
-      "user": req.user
-    });
+  console.log("Auth file", req.user);
+  res.json(req.user);
 };
 
 exports.checkUser = async (req, res) => {
   res.json({ status: 'success', user: req.user });
-};
+}

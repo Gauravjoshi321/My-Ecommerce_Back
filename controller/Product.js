@@ -16,6 +16,7 @@ exports.fetchAllProducts = async (req, res) => {
   // sort = {_sort:"price",_order="desc"}
   // pagination = {_page:1,_limit=10}
   // TODO : we have to try with multiple category and brands after change in front-end
+  console.log("req.user in products", req.user);
   let condition = {}
   if (!req.query.admin) {
     condition.deleted = { $ne: true }
@@ -52,7 +53,6 @@ exports.fetchAllProducts = async (req, res) => {
     const docs = await query.exec();
     res.set('X-Total-Count', totalDocs);
     res.status(200).json(docs);
-    console.log(docs);
   } catch (err) {
     res.status(400).json(err);
   }
