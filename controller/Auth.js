@@ -47,7 +47,8 @@ exports.loginUser = async (req, res) => {
       httpOnly: true,
     })
     .status(201)
-    .json(req.user.token);
+    .json({ "token": req.user.token });
+  // console.log("❌❌❌", req.user.token);
 };
 
 exports.checkAuth = async (req, res) => {
