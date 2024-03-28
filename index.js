@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const server = express();
 const mongoose = require('mongoose');
@@ -26,18 +27,17 @@ const { isAuth, sanitizeUser, cookieExtractor } = require('./services/common');
 
 // Stripe
 // This is your test secret API key.
-const stripe = require("stripe")('sk_test_51OyTUXSAW0vSiDgsagUC6JyWu3ng1CXnKAs1Ewdw8MauCBNxsA5b5uVyBSAq9Qou52dVaOMFYkNhCdqYDJjQS9EQ00a96TNcqX');
+const stripe = require("stripe")(process.env.STRIPE_SERVER_KEY);
 
 
 // Webhook
 
 // TODO: we will capture actual order after deploying out server live on public URL
 
-const endpointSecret = "whsec_a2e4b127c4725a7776ff2c3369f28023ca8cb67e1458d28ed2a15078cb700f8f";
+const endpointSecret = process.env.ENDPOINT_SECRET;
 
 server.post('/webhook', express.raw({ type: 'application/json' }), (request, response) => {
   const sig = request.headers['stripe-signature'];
-  console.log(sig);
 
   let event;
 
@@ -65,17 +65,16 @@ server.post('/webhook', express.raw({ type: 'application/json' }), (request, res
 });
 
 
-const SECRET_KEY = 'SECRET_KEY';
 // JWT options
 const opts = {};
 opts.jwtFromRequest = cookieExtractor;
-opts.secretOrKey = SECRET_KEY; // TODO: should not be in code;
+opts.secretOrKey = process.env.JWT_SECRET_KEY; // TODO: should not be in code;
 
 //middlewares
 server.use(cookieParser());
 server.use(
   session({
-    secret: 'keyboard cat',
+    secret: process.env.SESSION_KEY,
     resave: false, // don't save session if unmodified
     saveUninitialized: false, // don't create session until something stored
   })
@@ -139,6 +138,7 @@ passport.use(
       // by default passport uses username
       try {
         const user = await User.findOne({ email });
+        console.log(user);
         // console.log(email, password, user);
         if (!user) {
           return done(null, false, { message: 'invalid credentials' }); // for safety
@@ -153,7 +153,8 @@ passport.use(
             if (!crypto.timingSafeEqual(user.password, hashedPassword)) {
               return done(null, false, { message: 'invalid credentials' });
             }
-            const token = jwt.sign(sanitizeUser(user), SECRET_KEY);
+            const token = jwt.sign(sanitizeUser(user), process.env.JWT_SECRET_KEY);
+            console.log(token, "😂😂😂")
             done(null, { id: user.id, role: user.role, token }); // this lines sends to serializer
           }
         );
@@ -203,11 +204,11 @@ passport.deserializeUser(function (user, cb) {
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/My-Ecommerce_Back');
+  await mongoose.connect(process.env.MONGODB_URL);
   console.log("Database connected");
 }
 
 // NodeJS Server.
-server.listen(8080, () => {
+server.listen(process.env.PORT, () => {
   console.log("Server has started successfully.");
 })
