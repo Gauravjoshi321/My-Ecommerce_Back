@@ -100,7 +100,7 @@ server.post("/create-payment-intent", async (req, res) => {
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
     amount: totalAmount * 100, // for decimal compensation
-    currency: "INR",
+    currency: "USD",
     description: "description",
     payment_method_types: ['card'],
     receipt_email: "g@gmail.com",
@@ -109,9 +109,9 @@ server.post("/create-payment-intent", async (req, res) => {
         city: "city",
         line1: "line1",
         line2: "line2",
-        postal_code: "110084",
+        postal_code: "12345",
         state: "state",
-        country: "IN"
+        country: "US"
       },
       name: "Gaurav Joshi"
     },
