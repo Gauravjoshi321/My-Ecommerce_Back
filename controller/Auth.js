@@ -22,7 +22,6 @@ exports.createUser = async (req, res) => {
           if (err) {
             res.status(400).json(err);
           } else {
-            console.log("❌❌❌", process.env.JWT_SECRET_KEY)
             const token = jwt.sign(sanitizeUser(doc), process.env.JWT_SECRET_KEY);
             res
               .cookie('jwt', token, {
@@ -48,7 +47,6 @@ exports.loginUser = async (req, res) => {
     })
     .status(201)
     .json({ "token": req.user.token });
-  // console.log("❌❌❌", req.user.token);
 };
 
 exports.checkAuth = async (req, res) => {

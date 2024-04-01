@@ -16,7 +16,6 @@ exports.fetchAllProducts = async (req, res) => {
   // sort = {_sort:"price",_order="desc"}
   // pagination = {_page:1,_limit=10}
   // TODO : we have to try with multiple category and brands after change in front-end
-  console.log("req.user in products", req.user);
   let condition = {}
   if (!req.query.admin) {
     condition.deleted = { $ne: true }
@@ -41,7 +40,6 @@ exports.fetchAllProducts = async (req, res) => {
   }
 
   const totalDocs = await totalProductsQuery.count().exec();
-  console.log({ totalDocs });
 
   if (req.query._page && req.query._limit) {
     const pageSize = req.query._limit;
